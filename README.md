@@ -1,80 +1,43 @@
-# Recette de pancakes
+# Découvrons les timezones et Express JS
 
-Bon on va pas se mentir, les pancakes c'est bon.
+Aujourd'hui nous avons découvert le module Express qui nous permet de gérer plus facilement un serveur web en NodeJS.
+Mais également d'afficher des vues simples grâce à l'inclusion de fichiers HTML.
+Ce soir vous allez devoir afficher une liste de capitales et créer les pages permettant de connaître la date et l'heure dans chacune d'elle.
+À cette fin vous avez :
 
-Mais faire du HTML et CSS c'est aussi beaucoup de plaisir.
+- un module JS contenant les données de ces capitales my_modules/capitalCities.js
+- un template HTML affichant la liste des capitales views/index.html
 
-Alors... Pourquoi choisir ?
+## Énoncé débrouillard
 
-## Objectif
+1. Initialiser l'application grâce à npm.
+2. Rechercher et installer les modules npm ExpressJS et DayJS.
+3. Rechercher et installer un plugin de DayJS vous permettant de facilement afficher les heures des différents fuseaux horaires.
+4. Créer la route pour la page d'accueil.
+5. Créer une route _dynamique_ (= avec un paramètre) pour le détail des capitales.
+6. Trouver un moyen de séléctionner la bonne timezone de la capitale concernée.
+7. Faire l'intégration de la page capitale en précisant le nom de la capitale, le jour, et l'heure actuelle.
+8. Afficher les dates en français.
 
-Réaliser l'intégration de la recette des "1 mug pancakes" :
+## Énoncé guidé
 
-![recette](./ressources/resultat.png)
+<details><summary>À tout moment, n'hésitez pas à regarder la version guidée du point sur lequel vous bloquez</summary>
 
-> Recette testée et approuvée :yum:
+1. Nous avons vu en cours qu'il fallait initialiser notre projet avec une commande de npm.
+2. Pareil une fois le npm initialisé vous pouvez utiliser les commandes npm pour sauvegarder de nouveaux modules dans votre projet.
+3. Rechercher sur Google ou directement le site de DayJS les informations sur le plugin timezone. [Vous devez trouver cette page](https://day.js.org/docs/en/timezone/timezone).
+4. La [documentation d'ExpressJS](https://expressjs.com/fr/4x/api.html), vous sera d'une grande aide pour vous rappeler comment faire, mais nous l'avons vu en cours aujourd'hui.
+5. Encore une fois, [la doc vous dis tout](https://expressjs.com/en/guide/routing.html#route-parameters) !
+6. Vous avez trouvé le module pour gérer les "timezone", lisez maintenant la documentation associée, les "timezone" de chaque capitale sont déjà présentes dans les données fournies.
+7. Ici il va falloir utiliser la méthode classique pour afficher du HTML dans une page (sans inclure de fichiers), car vous avez des variables à utiliser.
+8. Ça vous l'avez déjà fait dans le challenge d'hier, et on l'a corrigé en cours ce matin ! Pas d'excuses :smile:
 
-## Instructions
-
-Beaucoup de textes quand même... Je vous rassure tout de suite, les textes sont fournis :relaxed: dans le fichier `ressources/recette.txt`
-
-- Commencez par créer une page html avec la structure de base.
-- Ajoutez les contenus en faisant le balisage.
-- Quand toute la structure (le fond) est ok, passez aux styles css
-- Allez-y doucement
-
-## Charte
-
-- La font (police de caractères) est sans empâtement : `sans-serif`
-- La couleur de fond est `#fff3db`
-- Les titres et autres éléments importants utilisent : `#f02425`
-- Le titre principal est en blanc
-
-## Bravo
-
-Si vous avez réussi à terminer cette intégration :clap: félicitations, vous pouvez aller vous reposer sereinement. :+1:
-
-Si il vous reste encore un peu d'énergie, je vous propose de tester cette recette :wink:
-
----
-
-Vous en voulez plus ?
-
-Attention, c'est du facultatif, le challenge est **fini**.
-
-<details>
-<summary>Bonus : <strong>facultatif</strong></summary>
+</details>
 
 ## Bonus
 
-- Ajoutez le visuel `https://images.unsplash.com/photo-1528207776546-365bb710ee93?fit=crop&w=600` à l'intégration : [MDN - img](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Img) ou [htmlreference - img](https://htmlreference.io/element/img/)
-- Ajoutez des liens dans la page, par exemple vers une boutique pour une crêpière ou un mug : : [MDN - a](https://developer.mozilla.org/fr/docs/Web/HTML/Element/a) ou [htmlreference - a](https://htmlreference.io/element/a/)
+La [documentation de DayJS](https://day.js.org/docs/en/installation/installation) et la [documentation d'ExpressJS](https://expressjs.com/fr/4x/api.html) reste vos meilleurs alliés !
 
-![recette bonus](./ressources/bonus/resultat-bonus.png)
-
-</details>
-
----
-
-Encore ? Euh il va falloir penser à aller se reposer là.
-
-<details>
-<summary>Méga bonus : <strong>encore plus facultatif</strong></summary>
-
-## Méga Bonus
-
-- Ajoutez les textes suivants à l'intégration.
-
-```text
-Astuce : Vous n'avez pas d'œuf ? Incorporer un peu de banane écrasée dans la préparation.
-
-Astuce : Ajouter un petit bout de beurre à fondre sur la pile de pancakes, un régal.
-
-Astuce : Si vous n'avez pas d'accompagnement en tête, verser un peu de sirop d'érable avant de servir.
-```
-
-- Pour styliser les textes correctement et/ou facilement il faudra faire appel à des petites nouveautés : [MDN - class](https://developer.mozilla.org/fr/docs/Web/HTML/Attributs_universels/class)
-
-![recette mega bonus](./ressources/bonus/resultat-mega-bonus.png)
-
-</details>
+1. Créer une page 404 en cas de capitale inconnue
+2. Ajouter de nouvelles capitales dans le module de données capitalCities.js
+3. Déplacer la récupération de l'heure et de la date dans un module personnalisé

@@ -1,0 +1,10 @@
+<%- include('partials/head') %>
+  <h1>Liste des grandes capitales du monde
+  </h1>
+
+  <ul>
+    <% capitalCities.forEach(city => { %>
+        <li><a href="/city/<%= city.name.toLowerCase() %>"><%= city.name %></a></li>
+    <% }) %>
+</ul>
+  <%- include('partials/foot') %>
